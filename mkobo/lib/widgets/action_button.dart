@@ -20,8 +20,6 @@ class ActionButton extends StatelessWidget {
         padding: const EdgeInsets.all(7),
         child: SvgPicture.asset(
           'assets/svg/$svgName.svg',
-          height: 25,
-          width: 25,
         ),
       ),
     );
