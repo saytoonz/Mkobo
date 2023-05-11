@@ -200,7 +200,9 @@ class _MyDashboardScreenState extends State<DashboardScreen>
                   ),
                 ],
               ),
-
+              const SizedBox(
+                height: 20,
+              ),
               //Recent Transactions
               Padding(
                 padding: const EdgeInsets.symmetric(

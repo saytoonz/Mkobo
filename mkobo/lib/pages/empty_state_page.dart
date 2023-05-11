@@ -47,7 +47,7 @@ class _MyEmptyStateScreeState extends State<EmptyStateScree>
       _cardScrollController.addListener(() {
         double maxScroll = _cardScrollController.position.maxScrollExtent;
         double currentScroll = _cardScrollController.position.pixels;
-        double delta = 20.0;
+        double delta = MediaQuery.of(context).size.width / 2;
         if (maxScroll - currentScroll <= delta) {
           selectedCard = 1;
           setState(() {});
@@ -79,12 +79,19 @@ class _MyEmptyStateScreeState extends State<EmptyStateScree>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Expanded(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const Expanded(
                       child: AccountUser(),
                     ),
-                    Actions()
+                    Column(
+                      children: const [
+                        Actions(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),

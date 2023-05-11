@@ -20,6 +20,8 @@ class QuickAccess extends StatelessWidget {
       itemCount: items.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
+        mainAxisSpacing: 0.0,
+        childAspectRatio: 1.1,
       ),
       itemBuilder: (context, index) {
         return Column(
