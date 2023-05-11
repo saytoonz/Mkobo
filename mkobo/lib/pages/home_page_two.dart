@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mkobo/pages/empty_state_page.dart';
+import 'empty_state_page.dart';
 
 import '../components/bottom_nav_bar.dart';
 import '../utils/app_colors.dart';
-import 'dashboard_page.dart';
 
 class HomePageTwo extends StatefulWidget {
   const HomePageTwo({super.key});

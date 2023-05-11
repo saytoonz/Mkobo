@@ -1,7 +1,6 @@
 import 'package:provider/provider.dart';
 
 import '../components/custom_tab_bar.dart';
-import '../components/recent_transactions.dart';
 import '../model/quick_access_item_model.dart';
 import '../providers/animation_provider.dart';
 import '../utils/app_colors.dart';

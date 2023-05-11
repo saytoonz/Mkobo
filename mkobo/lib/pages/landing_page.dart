@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mkobo/pages/home_page_one.dart';
-import 'package:mkobo/pages/home_page_two.dart';
-import 'package:mkobo/utils/app_colors.dart';
+import 'home_page_one.dart';
+import 'home_page_two.dart';
+import '../utils/app_colors.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});

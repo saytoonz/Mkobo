@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../model/quick_access_item_model.dart';
 import '../utils/app_colors.dart';
-import 'package:flutter/material.dart';
 
 class QuickAccess extends StatelessWidget {
   const QuickAccess({

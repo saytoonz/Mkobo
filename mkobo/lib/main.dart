@@ -1,9 +1,9 @@
-import './pages/landing_page.dart';
-
-import 'utils/app_colors.dart';
 // ignore_for_file: unrelated_type_equality_checks
 
 import 'package:flutter/material.dart';
+
+import 'pages/landing_page.dart';
+import 'utils/app_colors.dart';
 
 void main() {
   runApp(const MyApp());
