@@ -1,4 +1,4 @@
-import 'pages/home_page_one.dart';
+import './pages/landing_page.dart';
 
 import 'utils/app_colors.dart';
 // ignore_for_file: unrelated_type_equality_checks
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: AppColors.white,
       ),
-      home: const HomePageOne(),
+      home: const LandingPage(),
     );
   }
 }

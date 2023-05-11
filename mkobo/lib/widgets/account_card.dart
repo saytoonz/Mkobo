@@ -8,9 +8,11 @@ class AccountCard extends StatelessWidget {
   const AccountCard({
     super.key,
     required this.addSpace,
+    this.isEmptyState = false,
   });
 
   final bool addSpace;
+  final bool isEmptyState;
 
   @override
   Widget build(BuildContext context) {
@@ -77,21 +79,24 @@ class AccountCard extends StatelessWidget {
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
-                                const Text(
-                                  '690,390.68',
-                                  style: TextStyle(
+                                Text(
+                                  isEmptyState ? '0.00' : '690,390.68',
+                                  style: const TextStyle(
                                     color: AppColors.white,
                                     fontSize: 22,
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
-                                Material(
-                                  color: Colors.transparent,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(top: 2.0),
-                                    child: ActionButton(
-                                      svgName: 'eye',
-                                      onTap: () {},
+                                Visibility(
+                                  visible: !isEmptyState,
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(top: 2.0),
+                                      child: ActionButton(
+                                        svgName: 'eye',
+                                        onTap: () {},
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -135,32 +140,65 @@ class AccountCard extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 14,
-              right: 14,
-              bottom: 11,
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SvgPicture.asset(
-                  'assets/svg/fund-account.svg',
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                const Text(
-                  'Fund Account',
-                  style: TextStyle(
-                    color: AppColors.white,
-                    fontSize: 11.72,
-                    fontWeight: FontWeight.w400,
+          isEmptyState
+              ? Padding(
+                  padding: const EdgeInsets.only(
+                    left: 14,
+                    right: 14,
+                    bottom: 11,
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/person.svg',
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Text(
+                        'Verify  Your Identity',
+                        style: TextStyle(
+                          color: AppColors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      SvgPicture.asset(
+                        'assets/svg/arrow-forward.svg',
+                      ),
+                    ],
                   ),
                 )
-              ],
-            ),
-          ),
+              : Padding(
+                  padding: const EdgeInsets.only(
+                    left: 14,
+                    right: 14,
+                    bottom: 11,
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/fund-account.svg',
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Text(
+                        'Fund Account',
+                        style: TextStyle(
+                          color: AppColors.white,
+                          fontSize: 11.72,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
         ],
       ),
     );
